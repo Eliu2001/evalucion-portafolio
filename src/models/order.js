@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../config/database";
+import { sequelize } from "../config/database.js";
 import {User} from './user.js';
 
 export const Order = sequelize.define("orders", {
@@ -23,7 +23,3 @@ export const Order = sequelize.define("orders", {
         defaultValue : DataTypes.NOW,
     },
 });
-
-// Association 
-User.hasMany(Order, { foreignKey : 'userId', onDelete : 'CASCADE'});
-Order.belongsTo(User, { foreignKey : 'userId'});

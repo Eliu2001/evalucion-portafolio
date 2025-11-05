@@ -6,6 +6,6 @@ const app = e();
 app.use(e.json());
 
 app.use("/users", userRoutes);
-app.use("/orders", orderRoutes);
+app.use("/", orderRoutes);
 
 export default app;
