@@ -1,5 +1,5 @@
-import { Order } from "../models/order.js";
-import { User } from "../models/user.js";
+import { User, Order } from "../models/index.js";
+
 
 export const createOrder = async (req, res) => {
     try {

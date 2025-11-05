@@ -2,7 +2,6 @@ import { sequelize } from "../config/database.js";
 import { User } from "./user.js";
 import { Order } from "./order.js";
 
-// Definir asociaciones aquí
 User.hasMany(Order, { foreignKey: "user_id", onDelete: "CASCADE" });
 Order.belongsTo(User, { foreignKey: "user_id" });
 
