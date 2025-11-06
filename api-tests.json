@@ -1,0 +1,122 @@
+{
+  "info": {
+    "name": "Evaluación Portafolio - API Tests",
+    "_postman_id": "b1234e21-fake-5678-9abc-ef9876543210",
+    "description": "Colección de pruebas para la API Node + Sequelize + PostgreSQL",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1️⃣ Crear usuario",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Juan Perez\",\n    \"email\": \"juan@example.com\",\n    \"password\": \"123456\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users"]
+        }
+      }
+    },
+    {
+      "name": "2️⃣ Obtener todos los usuarios",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users"]
+        }
+      }
+    },
+    {
+      "name": "3️⃣ Obtener usuario por ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/users/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users", "1"]
+        }
+      }
+    },
+    {
+      "name": "4️⃣ Crear orden para usuario 1",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"product\": \"Teclado Mecánico\",\n    \"quantity\": 2\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/users/1/orders",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users", "1", "orders"]
+        }
+      }
+    },
+    {
+      "name": "5️⃣ Obtener todas las órdenes del usuario 1",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/users/1/orders",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users", "1", "orders"]
+        }
+      }
+    },
+    {
+      "name": "6️⃣ Crear otra orden para usuario 1",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"product\": \"Mouse Inalámbrico\",\n    \"quantity\": 1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/users/1/orders",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users", "1", "orders"]
+        }
+      }
+    },
+    {
+      "name": "7️⃣ Obtener órdenes de usuario 2 (vacío)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/users/2/orders",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users", "2", "orders"]
+        }
+      }
+    }
+  ]
+}
